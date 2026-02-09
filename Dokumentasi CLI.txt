@@ -1,0 +1,1648 @@
+LearnString.Sol
+
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ forge --version
+forge Version: 1.5.1-stable
+Commit SHA: b0a9dd9ceda36f63e2326ce530c10e6916f4b8a2  
+Build Timestamp: 2025-12-22T11:39:01.425730780Z (1766403541)
+Build Profile: maxperf
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ forge build
+[⠘] Compiling...
+[⠃] Compiling 30 files with Solc 0.8.33
+[⠒] Successfully installed Solc 0.8.33
+[⠑] Solc 0.8.33 finished in 3.58s
+  --> src/TokenUkdw.sol:33:5:
+   |
+33 |     }
+   |     ^
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ forge build
+[⠔] Compiling...
+[⠘] Compiling 24 files with Solc 0.8.33
+[⠆] Solc 0.8.33 finished in 1.16s
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ forge create \        
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  src/LearnString.sol:LearnString
+[⠒] Compiling...
+No files changed, compilation skipped
+Warning: Dry run enabled, not broadcasting transaction                       36f6c63430008210033",5e6a4ac46e0c27b985119f79766848c47d6038636e06c889ce8ff56473
+  "nonce": "0x0",ring
+  "chainId": "0x7a69"
+} "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+ABI: [: null,
+  {maxFeePerGas": "0x77359401",
+    "type": "constructor","0x1",
+    "inputs": [],",
+    "stateMutability": "nonpayable"f575f5ffd5b50604051806040016040528060028152
+  },
+  {
+    "type": "function",
+    "name": "changeName",
+    "type": "function",
+    "name": "studentName",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "string",
+        "internalType": "string"
+      }
+    ],
+    "stateMutability": "view"
+  }
+]
+
+Warning: To broadcast this transaction, add --broadcast to the previous command. See forge create --help for more.
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ forge create \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --broadcast \
+  src/LearnString.sol:LearnString
+[⠰] Compiling...
+No files changed, compilation skipped
+Deployer: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+Deployed to: 0x5FbDB2315678afecb367f032d93F642f64180aa3
+Transaction hash: 0x66931d1d25f1ea213c1dc0952cac38bbfd4c2313e328c8e5b77ed49af2f86daf
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0x5FbDB2315678afecb367f032d93F642f64180aa3 \
+  "studentName()(string)" \
+  --rpc-url http://127.0.0.1:8545
+"Ez"
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast send 0x5FbDB2315678afecb367f032d93F642f64180aa3 \                                                "changeName(string)" "Ezra" \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2
+ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0xd5b9c6efac33491a11a840967cbe01c971b9e9b6db2460702eaf710e0beca7c3
+blockNumber          2
+contractAddress
+cumulativeGasUsed    28042
+effectiveGasPrice    878616243
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              28042
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+root
+status               1 (success)
+transactionHash      0xd7615c3102d192ada5c478f3da1c0e937ebc17c9178261e5910ca5624c9d8ebc
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0x5FbDB2315678afecb367f032d93F642f64180aa3
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0x5FbDB2315678afecb367f032d93F642f64180aa3 \
+  "studentName()(string)" \
+  --rpc-url http://127.0.0.1:8545
+"Ezra"
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ 
+
+
+
+
+
+
+LearnNumber.sol
+
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ forge build
+[⠊] Compiling...
+[⠢] Compiling 1 files with Solc 0.8.33
+[⠆] Solc 0.8.33 finished in 77.22ms
+Compiler run successful with warnings:
+Warning (3420): Source file does not specify required compiler version! Consider adding "pragma solidity ^0.8.33;"
+--> src/LearnNumber.sol
+
+Warning: AST source not found for /mnt/c/Base/hello_fo[⠆] Solc 0.8.33 finished in 77.22ms
+Compiler run successful with warnings:
+Warning (3420): Source file does not specify required compiler version! Consider adding "pragma solidity ^0.8.33;"
+--> src/LearnNumber.sol
+
+Warning: AST source not found for /mnt/c/Base/hello_foundry/src/LearnNumber.sol
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ forge create \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --broadcast \
+  src/LearnNumber.sol:LearnNumber
+Compiler run successful with warnings:
+Warning (3420): Source file does not specify required compiler version! Consider adding "pragma solidity ^0.8.33;"
+--> src/LearnNumber.sol
+
+Warning: AST source not found for /mnt/c/Base/hello_foundry/src/LearnNumber.sol
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ forge create \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --broadcast \
+  src/LearnNumber.sol:LearnNumber
+8.33;"
+--> src/LearnNumber.sol
+
+Warning: AST source not found for /mnt/c/Base/hello_foundry/src/LearnNumber.sol
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ forge create \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --broadcast \
+  src/LearnNumber.sol:LearnNumber
+
+Warning: AST source not found for /mnt/c/Base/hello_foundry/src/LearnNumber.sol
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ forge create \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+undry/src/LearnNumber.sol
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ forge create \
+  --rpc-url http://127.0.0.1:8545 \
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ forge create \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --broadcast \
+  src/LearnNumber.sol:LearnNumber
+[⠒] Compiling...
+[⠃] Compiling 1 files with Solc 0.8.33
+[⠊] Solc 0.8.33 finished in 124.43ms
+Compiler run successful!
+Deployer: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266  
+Deployed to: 0x5FbDB2315678afecb367f032d93F642f64180aa3
+Transaction hash: 0x6e91d6e297d2c45609dcfd18db95178aa39b41e341be8fd017c3ccacd14349db
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0x5FbDB2315678afecb367f032d93F642f64180aa3 \                                                    
+  "StudentId()(string)" \
+  --rpc-url http://127.0.0.1:8545                     
+Error: server returned an error response: error code 3: execution reverted, data: "0x"
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0x5FbDB2315678afecb367f032d93F642f64180aa3   "StudentId()(uint256)"   --rpc-url http://127.0.0.1
+:8545
+Error: server returned an error response: error code 3: execution reverted, data: "0x"
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0x5FbDB2315678afecb367f032d93F642f64180aa3 \
+  "studentId()(uint256)" \
+  --rpc-url http://127.0.0.1:8545
+2101001 [2.101e6]
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast send 0x5FbDB2315678afecb367f032d93F642f64180aa3 \
+  "changeStudentId(uint256)" 123 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0x46d066cb3383a5b426e2820c64e5cfa6497ab14325bcf57a11662552cad8fc06
+blockNumber          2
+contractAddress
+cumulativeGasUsed    26640
+effectiveGasPrice    876558460
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              26640
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0xaea3a65f6885afccc4ccc3cde62b048a3b16289e1cafbb2b8060bedbea54e491
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0x5FbDB2315678afecb367f032d93F642f64180aa3
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0x5FbDB2315678afecb367f032d93F642f64180aa3   "studentId()(uint256)"   --rpc-url http://127.0.0.1:8545
+123
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0x5FbDB2315678afecb367f032d93F642f64180aa3 \
+  "credits()(uint256)" \
+  --rpc-url http://127.0.0.1:8545
+0
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast send 0x5FbDB2315678afecb367f032d93F642f64180aa3 \
+  "addCredits()" \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0xe59c8027ed4173ac39507aa541fc79e3099b89948c3b17f10c4da1e33087516f
+blockNumber          3
+contractAddress
+cumulativeGasUsed    43506
+effectiveGasPrice    767183249
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              43506
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0x9150404997ee4370ccc63f36c1ef0e4c9eae875ccc2733ce74bbf41d8eb21dae
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0x5FbDB2315678afecb367f032d93F642f64180aa3
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0x5FbDB2315678afecb367f032d93F642f64180aa3 \
+  "credits()(uint256)" \
+  --rpc-url http://127.0.0.1:8545
+3
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$
+
+
+
+
+
+
+
+
+
+
+
+LearnBoolean.sol
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ forge build
+[⠑] Compiling...
+[⠃] Compiling 1 files with Solc 0.8.33
+[⠒] Solc 0.8.33 finished in 71.42ms
+Compiler run successful!
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ $ forge create \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+undry/src/LearnBoolean.sol
+$: command not found
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ $ forge create   --rpc-url http://127.0.0.1:8545   --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 undry/src/LearnBoolean.sol
+$: command not found
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ forge create \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --broadcast \
+  src/LearnBoolean.sol:LearnBoolean
+[⠰] Compiling...
+No files changed, compilation skipped
+Deployer: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+Deployed to: 0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9
+Transaction hash: 0x4a93186046209fd0e19713f9bd9d26401ba50b489e6aabc12e6f2542648b97a9
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0x5FbDB2315678afecb367f032d93F642f64180aa3 \
+  "isActive()(bool)" \
+  --rpc-url http://127.0.0.1:8545
+Error: server returned an error response: error code 3: execution reverted, data: "0x"
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ forge create \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --broadcast \
+  src/LearnBoolean.sol:LearnBoolean
+[⠆] Compiling...
+No files changed, compilation skipped
+Deployer: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+Deployed to: 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9
+Transaction hash: 0xf4e213129d7cee5e28f08bc4e2009de324c19f2456db6c692146231762c78e16
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9 \
+  "isActive()(bool)" \
+  --rpc-url http://127.0.0.1:8545
+true
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast send 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9 \
+  "changeStatus(bool)" false \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0xadbfbe6e1d9404f5a5710056c7ee8dabb8477092291d76bb386b39c1cc892888
+blockNumber          6
+contractAddress
+cumulativeGasUsed    21886
+effectiveGasPrice    515890184
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              21886
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0x1f3eddafd7fb5233d334ed466c6e6d42e2bcb054dc93f3b4a83cd52172358855
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9 \
+  "isActive()(bool)" \
+  --rpc-url http://127.0.0.1:8545
+false
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9 \
+  "hasGraduated()(bool)" \
+  --rpc-url http://127.0.0.1:8545
+false
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast send 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9   "graduate(bool)" true   --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 
+  --rpc-url http://127.0.0.1:8545
+Error: Failed to estimate gas: server returned an error response: error code 3: execution reverted, data: "0x"
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast send 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9 \
+  "graduate(bool)" true \
+  --gas-limit 300000 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0xb82aa53e6d0444ec2cab067bd66e8a4cf8421c7420ac14e2de78d7b951d655c7
+blockNumber          7
+contractAddress
+cumulativeGasUsed    21510
+effectiveGasPrice    451498001
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              21510
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               0 (failed)
+transactionHash      0xf4d358ff61c68967d4e651b19b0ab8634d9dbed8b011d8af9dab3d219c2621d1
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9 \
+  "graduate()(bool)" \
+  --rpc-url http://127.0.0.1:8545
+Error: could not decode output; did you specify the wrong function return data type?
+
+Context:
+- ABI decoding failed: buffer overrun while deserializing
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9 \
+  "hasGraduated()(bool)" \
+  --rpc-url http://127.0.0.1:8545
+false
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast send 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9 \
+  "graduate()" \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0x5d6ab681883ef74d82ae761f8542a47ec1adea7e56bbf86f7cd171f82c1ef413
+blockNumber          8
+contractAddress
+cumulativeGasUsed    43467
+effectiveGasPrice    395141683
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              43467
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0x0be87e5d2277b45bca20bc0cf8abddf6eb045769bc4b4ffac0a90b4406e2a72d
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9 \
+  "hasGraduated()(bool)" \
+  --rpc-url http://127.0.0.1:8545
+true
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$
+
+
+
+
+
+LearnAddress.sol
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ forge build
+[⠒] Compiling...
+[⠘] Compiling 1 files with Solc 0.8.33
+[⠊] Solc 0.8.33 finished in 89.38ms
+Compiler run successful!
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ forge create \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --broadcast \
+  src/LearnAddress.sol:LearnAddress
+[⠆] Compiling...
+No files changed, compilation skipped
+Deployer: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+Deployed to: 0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6
+Transaction hash: 0x60c9579a8b8506946a8093040f0fbbb7bbaa7cfaa26f0a2c277266c3783a8a8a
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6 \
+  "admin()(address)" \
+  --rpc-url http://127.0.0.1:8545
+0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6 \
+  "student()(address)" \
+  --rpc-url http://127.0.0.1:8545
+0x0000000000000000000000000000000000000000
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast send 0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6
+ \                                                    
+  "setStudent(address)" 0x537b9BCc6a1fBa7530805a8F5A573735d11cBcEf \                                          --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0x14de9b2b0651a118b327332284a67a342947394203a084377239adf7e18acda9
+blockNumber          10
+contractAddress
+cumulativeGasUsed    44025
+effectiveGasPrice    303203758
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              44025
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0x2fc114e3fbfa2d41bca02725ffe91838eb0b41910873b933c47c7e9f2d1dcba1
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6   "student()(address)"   --rpc-url http://127.0.0.1:8545
+0x537b9BCc6a1fBa7530805a8F5A573735d11cBcEf
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$
+
+
+
+
+Task : BuatStudentData Sendiri
+
+StudentData.sol
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ forge build
+[⠑] Compiling...
+[⠃] Compiling 1 files with Solc 0.8.33
+[⠊] Solc 0.8.33 finished in 90.77ms
+Compiler run successful!
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ forge create \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --broadcast \
+  src/StudentData.sol:StudentData
+[⠆] Compiling...
+No files changed, compilation skipped
+Deployer: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+Deployed to: 0x610178dA211FEF7D417bC0e6FeD39F05609AD788
+Transaction hash: 0x761990edfbfa420b6441663e3407b842e47d9c24441154fb9563df9e5fbd27ca
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0x610178dA211FEF7D417bC0e6FeD39F05609AD788 \
+  "studentName()(string)" \
+  --rpc-url http://127.0.0.1:8545
+"Budi Santoso"
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0x610178dA211FEF7D417bC0e6FeD39F05609AD788   "studenId()(uint256)"   --rpc-url http://127.0.0.1:
+8545
+Error: server returned an error response: error code 3: execution reverted, data: "0x"
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0x610178dA211FEF7D417bC0e6FeD39F05609AD788   "studentId()(uint256)"   --rpc-url http://127.0.0.1
+:8545
+2101001 [2.101e6]
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0x610178dA211FEF7D417bC0e6FeD39F05609AD788   "isActive()(bool)"   --rpc-url http://127.0.0.1:854
+5
+true
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0x610178dA211FEF7D417bC0e6FeD39F05609AD788   "registeredTime()(uint256)"   --rpc-url http://127.
+0.0.1:8545
+1770630389 [1.77e9]
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0x610178dA211FEF7D417bC0e6FeD39F05609AD788   "credits()(uint256)"   --rpc-url http://127.0.0.1:8
+545
+0
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0x610178dA211FEF7D417bC0e6FeD39F05609AD788 \
+  "getAge()(uint256)" \
+  --rpc-url http://127.0.0.1:8545
+0
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast send 0x610178dA211FEF7D417bC0e6FeD39F05609AD788 \
+  "updateCredits()" \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0x0aea915506d099849c98c79d379d3dd4cc77d7bcd1b14b4cbd4657e2872ecd04
+blockNumber          12
+contractAddress
+cumulativeGasUsed    43572
+effectiveGasPrice    233182700
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              43572
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0x1b6256b29768029a08d08822f55473d4f2ac06aa349652326779c8c0629752d1
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0x610178dA211FEF7D417bC0e6FeD39F05609AD788
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0x610178dA211FEF7D417bC0e6FeD39F05609AD788 \
+  "credits()(uint256)" \
+  --rpc-url http://127.0.0.1:8545
+3
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry$ cast call 0x610178dA211FEF7D417bC0e6FeD39F05609AD788 \
+  "getAge()(uint256)" \
+  --rpc-url http://127.0.0.1:8545
+379
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/hello_foundry
+
+
+
+
+
+
+
+
+
+
+
+
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base$ forge init Solidity_102
+Initializing /mnt/c/Base/Solidity_102...
+Installing forge-std in /mnt/c/Base/Solidity_102/lib/forge-std (url: https://github.com/foundry-rs/forge-std, tag: None)
+Cloning into '/mnt/c/Base/Solidity_102/lib/forge-std'...
+remote: Enumerating objects: 2809, done.
+remote: Counting objects: 100% (185/185), done.       
+remote: Compressing objects: 100% (87/87), done.      
+Receiving objects:  87% (2444/2809), 828.00 KiB | 1.52Receiving objects:  88% (2472/2809), 828.00 KiB | 1.52Receiving objects:  89% (2501/2809), 828.00 KiB | 1.52Receiving objects:  90% (2529/2809), 828.00 KiB | 1.52Receiving objects:  91% (2557/2809), 828.00 KiB | 1.52Receiving objects:  92% (2585/2809), 828.00 KiB | 1.52Receiving objects:  93% (2613/2809), 828.00 KiB | 1.52Receiving objects:  94% (2641/2809), 828.00 KiB | 1.52Receiving objects:  95% (2669/2809), 828.00 KiB | 1.52Receiving objects:  96% (2697/2809), 828.00 KiB | 1.52Receiving objects:  97% (2725/2809), 828.00 KiB | 1.52Receiving objects:  98% (2753/2809), 828.00 KiB | 1.52Receiving objects:  99% (2781/2809), 828.00 KiB | 1.52remote: Total 2809 (delta 148), reused 100 (delta 98), pack-reused 2624 (from 2)
+Receiving objects: 100% (2809/2809), 828.00 KiB | 1.52Receiving objects: 100% (2809/2809), 1.02 MiB | 1.53 MiB/s, done.
+Resolving deltas: 100% (1880/1880), done.
+    Installed forge-std tag=v1.14.0@1801b0541f4fda118a10798fd3486bb7051c5dd6
+    Initialized forge project
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base$ cd solidity_102
+
+
+
+
+
+LearnEnum.sol
+
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_102$
+ forge build
+[⠆] Compiling...
+[⠆] Compiling 24 files with Solc 0.8.33
+[⠑] Solc 0.8.33 finished in 1.05s
+Compiler run successful!
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_102$
+ forge create \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --broadcast \
+  src/LearnEnum.sol:LearnEnum
+[⠆] Compiling...
+No files changed, compilation skipped
+Deployer: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+Deployed to: 0xA51c1fc2f0D1a1b8494Ed1FE312d7C3a78Ed91C0
+Transaction hash: 0xb4b42b6a18e75e024f11cfcc1e4ecacdf035bfc08e90daf09ccbe2f7960318f0
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_102$
+ cast call 0xA51c1fc2f0D1a1b8494Ed1FE312d7C3a78Ed91C0 \
+  "currentStatus()(uint8)" \
+  --rpc-url http://127.0.0.1:8545
+0
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_102$
+ cast send 0xA51c1fc2f0D1a1b8494Ed1FE312d7C3a78Ed91C0 \
+  "register()" \                                        --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0x1ffc2d18c46e402568333ce231487ca15bfcb5bf7919e5f182c0894599ea4bc0
+blockNumber          14
+contractAddress
+cumulativeGasUsed    43370
+effectiveGasPrice    178918556
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              43370
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0xcba186321fc2f2e4a59ebc537a16b7ec4b3d9a93b7bdc28f2a75197dff8cef37
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0xA51c1fc2f0D1a1b8494Ed1FE312d7C3a78Ed91C0
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_102$
+ cast call 0xA51c1fc2f0D1a1b8494Ed1FE312d7C3a78Ed91C0   "currentStatus()(uint8)"   --rpc-url http://127.0.0.1:8545
+1
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_102$
+
+
+
+
+LearnStruct.sol
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/Solidity_102$ forge build
+[⠒] Compiling...
+[⠃] Compiling 1 files with Solc 0.8.33
+[⠊] Solc 0.8.33 finished in 158.58ms
+Compiler run successful!
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/Solidity_102$ forge create \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --broadcast \
+  src/LearnStruct.sol:LearnStruct
+[⠆] Compiling...
+No files changed, compilation skipped
+Deployer: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+Deployed to: 0x9A676e781A523b5d0C0e43731313A708CB607508
+Transaction hash: 0x01fb13824ac4331deedff4177fcdc8139e802b7c7d9da4f55f862ab4bc1f3261
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/Solidity_102$
+ cast call 0x9A676e781A523b5d0C0e43731313A708CB607508 \
+  "myStudent()(uint256,string,address,uint8,uint8,bool)" \
+  --rpc-url http://127.0.0.1:8545
+2101001 [2.101e6]
+"Budi Santoso"
+0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+1
+0
+true
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/Solidity_102$
+ cast send 0x9A676e781A523b5d0C0e43731313A708CB607508 \
+  "addCredits()" \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0x45d2449c51dbf83704d1f3af111147102f81c8a3fce474b2ab23e15a7c56a9d9
+blockNumber          16
+contractAddress
+cumulativeGasUsed    26698
+effectiveGasPrice    137584660
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              26698
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0xdd184a3bc10f917b1b4fa162bf41cb486e04debea004ad51eb13c542ce8116a5
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0x9A676e781A523b5d0C0e43731313A708CB607508
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/Solidity_102$
+ cast call 0x9A676e781A523b5d0C0e43731313A708CB607508 \
+  "myStudent()(uint256,string,address,uint8,uint8,bool)" \
+  --rpc-url http://127.0.0.1:8545
+2101001 [2.101e6]
+"Budi Santoso"
+0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+1
+3
+true
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/Solidity_102$
+ cast send 0x9A676e781A523b5d0C0e43731313A708CB607508 \
+  "changeStatus(uint8)" 3 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0xf69d55cad92bac47f3f86e0864c07870d8672ab80b098ec214e6d963c2cb238b
+blockNumber          17
+contractAddress
+cumulativeGasUsed    26727
+effectiveGasPrice    120417188
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              26727
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0x758227d1f97ee454533136fb5eea97cc050340495a9fa2ca71f0ee2213c8e8c4
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0x9A676e781A523b5d0C0e43731313A708CB607508
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/Solidity_102$
+ cast call 0x9A676e781A523b5d0C0e43731313A708CB607508 \
+  "myStudent()(uint256,string,address,uint8,uint8,bool)" \
+  --rpc-url http://127.0.0.1:8545
+2101001 [2.101e6]
+"Budi Santoso"
+0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+3
+3
+true
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/Solidity_102$
+
+
+
+
+
+
+
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base$ forge init Solidity_103
+Initializing /mnt/c/Base/Solidity_103...
+Installing forge-std in /mnt/c/Base/Solidity_103/lib/forge-std (url: https://github.com/foundry-rs/forge-std, tag: None)
+Cloning into '/mnt/c/Base/Solidity_103/lib/forge-std'...
+remote: Enumerating objects: 2809, done.
+remote: Counting objects: 100% (185/185), done.       
+remote: Compressing objects: 100% (87/87), done.      
+Receiving objects:  23% (647/2809), 428.00 KiB | 839.0Receiving objects:  24% (675/2809), 428.00 KiB | 839.0Receiving objects:  25% (703/2809), 428.00 KiB | 839.0Receiving objects:  26% (731/2809), 428.00 KiB | 839.0Receiving objects:  27% (759/2809), 428.00 KiB | 839.0Receiving objects:  28% (787/2809), 428.00 KiB | 839.0Receiving objects:  29% (815/2809), 428.00 KiB | 839.0Receiving objects:  30% (843/2809), 428.00 KiB | 839.0Receiving objects:  31% (871/2809), 428.00 KiB | 839.0Receiving objects:  32% (899/2809), 428.00 KiB | 839.0Receiving objects:  33% (927/2809), 428.00 KiB | 839.0Receiving objects:  34% (956/2809), 428.00 KiB | 839.0Receiving objects:  35% (984/2809), 428.00 KiB | 839.0Receiving objects:  36% (1012/2809), 428.00 KiB | 839.Receiving objects:  37% (1040/2809), 428.00 KiB | 839.Receiving objects:  38% (1068/2809), 428.00 KiB | 839.Receiving objects:  39% (1096/2809), 428.00 KiB | 839.Receiving objects:  40% (1124/2809), 428.00 KiB | 839.Receiving objects:  41% (1152/2809), 428.00 KiB | 839.Receiving objects:  42% (1180/2809), 428.00 KiB | 839.Receiving objects:  43% (1208/2809), 428.00 KiB | 839.Receiving objects:  44% (1236/2809), 428.00 KiB | 839.Receiving objects:  45% (1265/2809), 428.00 KiB | 839.Receiving objects:  46% (1293/2809), 428.00 KiB | 839.Receiving objects:  47% (1321/2809), 428.00 KiB | 839.Receiving objects:  48% (1349/2809), 428.00 KiB | 839.Receiving objects:  49% (1377/2809), 428.00 KiB | 839.Receiving objects:  50% (1405/2809), 428.00 KiB | 839.Receiving objects:  51% (1433/2809), 428.00 KiB | 839.Receiving objects:  52% (1461/2809), 428.00 KiB | 839.Receiving objects:  53% (1489/2809), 428.00 KiB | 839.Receiving objects:  54% (1517/2809), 428.00 KiB | 839.Receiving objects:  55% (1545/2809), 428.00 KiB | 839.Receiving objects:  56% (1574/2809), 428.00 KiB | 839.Receiving objects:  57% (1602/2809), 428.00 KiB | 839.Receiving objects:  58% (1630/2809), 428.00 KiB | 839.Receiving objects:  59% (1658/2809), 428.00 KiB | 839.Receiving objects:  60% (1686/2809), 428.00 KiB | 839.Receiving objects:  61% (1714/2809), 428.00 KiB | 839.Receiving objects:  62% (1742/2809), 428.00 KiB | 839.Receiving objects:  63% (1770/2809), 428.00 KiB | 839.Receiving objects:  64% (1798/2809), 428.00 KiB | 839.Receiving objects:  65% (1826/2809), 428.00 KiB | 839.Receiving objects:  66% (1854/2809), 428.00 KiB | 839.Receiving objects:  67% (1883/2809), 428.00 KiB | 839.Receiving objects:  68% (1911/2809), 428.00 KiB | 839.Receiving objects:  69% (1939/2809), 428.00 KiB | 839.Receiving objects:  70% (1967/2809), 428.00 KiB | 839.Receiving objects:  71% (1995/2809), 428.00 KiB | 839.Receiving objects:  72% (2023/2809), 428.00 KiB | 839.Receiving objects:  73% (2051/2809), 428.00 KiB | 839.Receiving objects:  74% (2079/2809), 428.00 KiB | 839.Receiving objects:  75% (2107/2809), 428.00 KiB | 839.Receiving objects:  76% (2135/2809), 428.00 KiB | 839.Receiving objects:  77% (2163/2809), 428.00 KiB | 839.Receiving objects:  78% (2192/2809), 428.00 KiB | 839.Receiving objects:  79% (2220/2809), 428.00 KiB | 839.Receiving objects:  80% (2248/2809), 428.00 KiB | 839.Receiving objects:  81% (2276/2809), 428.00 KiB | 839.Receiving objects:  82% (2304/2809), 428.00 KiB | 839.Receiving objects:  83% (2332/2809), 428.00 KiB | 839.Receiving objects:  84% (2360/2809), 428.00 KiB | 839.Receiving objects:  85% (2388/2809), 428.00 KiB | 839.Receiving objects:  86% (2416/2809), 428.00 KiB | 839.Receiving objects:  87% (2444/2809), 428.00 KiB | 839.Receiving objects:  88% (2472/2809), 428.00 KiB | 839.Receiving objects:  89% (2501/2809), 428.00 KiB | 839.Receiving objects:  90% (2529/2809), 428.00 KiB | 839.Receiving objects:  91% (2557/2809), 428.00 KiB | 839.Receiving objects:  92% (2585/2809), 428.00 KiB | 839.Receiving objects:  93% (2613/2809), 428.00 KiB | 839.Receiving objects:  94% (2641/2809), 428.00 KiB | 839.Receiving objects:  95% (2669/2809), 428.00 KiB | 839.Receiving objects:  96% (2697/2809), 428.00 KiB | 839.Receiving objects:  97% (2725/2809), 428.00 KiB | 839.Receiving objects:  98% (2753/2809), 428.00 KiB | 839.remote: Total 2809 (delta 148), reused 100 (delta 98), pack-reused 2624 (from 2)
+Receiving objects:  99% (2781/2809), 428.00 KiB | 839.Receiving objects: 100% (2809/2809), 428.00 KiB | 839.Receiving objects: 100% (2809/2809), 1.02 MiB | 1.15 MiB/s, done.
+Resolving deltas: 100% (1880/1880), done.
+    Installed forge-std tag=v1.14.0@1801b0541f4fda118a10798fd3486bb7051c5dd6
+    Initialized forge project
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base$
+
+
+
+
+
+
+
+
+LearnMapping.sol
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+ forge build
+[⠆] Compiling...
+[⠆] Compiling 24 files with Solc 0.8.33
+[⠒] Solc 0.8.33 finished in 988.09ms
+Compiler run successful!
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+ forge create \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --broadcast \
+  src/LearnMapping.sol:LearnMapping
+[⠰] Compiling...
+No files changed, compilation skipped
+Deployer: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+Deployed to: 0x9A9f2CCfdE556A7E9Ff0848998Aa4a0CFD8863AE
+Transaction hash: 0x2cd7aea2d62bc917f387e1c7c9bf8d3303c61c5b3d0430afbb5f4a5984f9910e
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+ cast send 0x9A9f2CCfdE556A7E9Ff0848998Aa4a0CFD8863AE \                                                       "addStudent(uint256,string)" 2101001 "Budi Santoso" \                                                       --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0xdcc68b9fad9ae3ac05d663c1cacc8402beb2c88745f2f5df0f71f7d468a203c2
+blockNumber          19
+contractAddress
+cumulativeGasUsed    47959
+effectiveGasPrice    92669035
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              47959
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0xb70f2d1580337cf86d9513f418e82b01de8ff6e6d4e0a74bb39b749aa421ccc4
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0x9A9f2CCfdE556A7E9Ff0848998Aa4a0CFD8863AE
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+ cast call 0x9A9f2CCfdE556A7E9Ff0848998Aa4a0CFD8863AE \
+  "studentName(uint256)(string)" 2101001 \
+  --rpc-url http://127.0.0.1:8545
+"Budi Santoso"
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+ cast call 0x9A9f2CCfdE556A7E9Ff0848998Aa4a0CFD8863AE \                                                     
+  "studentCredits(uint256)(uint256)" 2101001 \
+  --rpc-url http://127.0.0.1:8545
+0
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+ cast call 0x9A9f2CCfdE556A7E9Ff0848998Aa4a0CFD8863AE   "studentName(uint256)(string)" 2101002   --rpc-url h
+ttp://127.0.0.1:8545
+""
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+ cast send 0x9A9f2CCfdE556A7E9Ff0848998Aa4a0CFD8863AE   "addStudent(uint256,string)" 2101002 "Ani"   --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80   --rpc-url http://127.0.0.1:8545 
+
+blockHash            0x3eb7d492022cd0b8fc9bade1a2edc706a76cbd33b9b8d157984782942f949694
+blockNumber          20
+contractAddress
+cumulativeGasUsed    47851
+effectiveGasPrice    81122442
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              47851
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0xe2a42ee8eec4ec02263ad75724db2e01394cd347c91ef6150d72ea7e641ddf72
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0x9A9f2CCfdE556A7E9Ff0848998Aa4a0CFD8863AE
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+ cast call 0x9A9f2CCfdE556A7E9Ff0848998Aa4a0CFD8863AE   "studentName(uint256)(string)" 2101002   --rpc-url http://127.0.0.1:8545
+"Ani"
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+
+
+
+
+LearnArray.sol
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$ forge build
+[⠒] Compiling...
+[⠑] Compiling 1 files with Solc 0.8.33
+[⠘] Solc 0.8.33 finished in 66.64ms
+Compiler run successful!
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$ forge create \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --broadcast \
+  src/LearnArray.sol:LearnArray  
+[⠆] Compiling...
+No files changed, compilation skipped
+Deployer: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+Deployed to: 0xc6e7DF5E7b4f2A278906862b61205850344D4e7d
+Transaction hash: 0x7420086b0d45b46235b395985013190aec094227417ff62d3459228baf6efe25
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+ cast send 0xc6e7DF5E7b4f2A278906862b61205850344D4e7d \
+  "addStudent(uint256)" 2101001 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0xce25d1b2dbc5a830e19ddb0f8e2f2aafa8823846e888c0b533788e8ed86cf8b0
+blockNumber          22
+contractAddress
+cumulativeGasUsed    65926
+effectiveGasPrice    62287741
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              65926
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0x65fdd1c70a1a3e9b8eeef9fb54e2ccfe119eb1d49fb0111b65d6b6af66d83011
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0xc6e7DF5E7b4f2A278906862b61205850344D4e7d
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+ cast send 0xc6e7DF5E7b4f2A278906862b61205850344D4e7d \
+  "addStudent(uint256)" 2101001 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0xbc2d70863ea0ce5ad017db0f720de05a098dbbd459499f511e3360e8c53ead50
+blockNumber          23
+contractAddress
+cumulativeGasUsed    48826
+effectiveGasPrice    54535994
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              48826
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0x8baea248136576cea1954bad311a23f3acdccde16ff55a84ef7da105abbab2e2
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0xc6e7DF5E7b4f2A278906862b61205850344D4e7d
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+ cast send 0xc6e7DF5E7b4f2A278906862b61205850344D4e7d \
+  "addStudent(uint256)" 2101003 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0x821c794c014f52ef610fe290e404147289e1c058573c885c3274e54b5f48c28b
+blockNumber          24
+contractAddress
+cumulativeGasUsed    48826
+effectiveGasPrice    47741185
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              48826
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0xaec604bfd6e4745cb6e23a9bba6779b9b5583c4887d14fa4e083d7f95e27f170
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0xc6e7DF5E7b4f2A278906862b61205850344D4e7d
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+ cast send 0xc6e7DF5E7b4f2A278906862b61205850344D4e7d \
+  "addStudent(uint256)" 2101003 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0x8d6c59be03f8d8117c9af0ddb56cf670c670ae15912d6ba4be51fe97637c3e77
+blockNumber          25
+contractAddress
+cumulativeGasUsed    48826
+effectiveGasPrice    41792963
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              48826
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0x799544e449213fd21f839132f9747f4fadfd867b52212fa922d078942419ee1f
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0xc6e7DF5E7b4f2A278906862b61205850344D4e7d
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+ cast call 0xc6e7DF5E7b4f2A278906862b61205850344D4e7d \
+  "getTotalStudents()(uint256)" \
+  --rpc-url http://127.0.0.1:8545
+4
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+ cast call 0xc6e7DF5E7b4f2A278906862b61205850344D4e7d \
+  "getAllStudents()(uint256[])" \
+  --rpc-url http://127.0.0.1:8545
+[2101001 [2.101e6], 2101001 [2.101e6], 2101003 [2.101e6], 2101003 [2.101e6]]
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+
+
+
+
+
+
+
+MultipleStudents.sol
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$ forge build
+[⠑] Compiling...
+[⠃] Compiling 1 files with Solc 0.8.33
+[⠒] Solc 0.8.33 finished in 118.64ms
+Compiler run successful!
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$ forge create \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --broadcast \
+  src/MultipleStudents.sol:MultipleStudents
+[⠰] Compiling...
+No files changed, compilation skipped
+Deployer: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+Deployed to: 0x4A679253410272dd5232B3Ff7cF5dbB88f295319
+Transaction hash: 0x78d2cb91fadc747afba9ce85f1c8e6d2c891ea9c1892a50798fa7b154c39d6b5
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+ cast call 0x4A679253410272dd5232B3Ff7cF5dbB88f295319 \
+  "addStudent(string)(uint256)" "Budi" \
+  --rpc-url http://127.0.0.1:8545
+1
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+ cast send 0x4A679253410272dd5232B3Ff7cF5dbB88f295319 \
+  "addStudent(string)" "Budi" \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0xd1f99d6484e93c0e1f730d8f775e94189ffe4b70010900ac0a716255ad975601
+blockNumber          27
+contractAddress
+cumulativeGasUsed    113491
+effectiveGasPrice    32288890
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              113491
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0x4e0820b29d9b3e757dfdd3deeda40339350c98cd6e7c1d5eef6d69aafdb4a925
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0x4A679253410272dd5232B3Ff7cF5dbB88f295319
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+ cast send 0x4A679253410272dd5232B3Ff7cF5dbB88f295319 \
+  "addStudent(string)" "Budi" \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0x298b3561f5eddf6a508c54b705b13cd067b77facb2cf3e51488fbeaebb928f67
+blockNumber          28
+contractAddress
+cumulativeGasUsed    96391
+effectiveGasPrice    28283317
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              96391
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0x2c57bbf275437196d94c620abea9a2624f035cbab82f5e75062bdcc2f6bc0bac
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0x4A679253410272dd5232B3Ff7cF5dbB88f295319
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+ cast call 0x4A679253410272dd5232B3Ff7cF5dbB88f295319 \
+  "addStudent(string)(uint256)" "Ani" \
+  --rpc-url http://127.0.0.1:8545
+3
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+ cast call 0x4A679253410272dd5232B3Ff7cF5dbB88f295319 \
+  "studentCounter()(uint256)" \
+  --rpc-url http://127.0.0.1:8545
+2
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+ cast call 0x4A679253410272dd5232B3Ff7cF5dbB88f295319 \
+  "getStudent(uint256)(uint256,string,address,uint8,uint8,bool)" 1 \
+  --rpc-url http://127.0.0.1:8545
+Error: could not decode output; did you specify the wrong function return data type?
+
+Context:
+- ABI decoding failed: buffer overrun while deserializing
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+ cast call 0x4A679253410272dd5232B3Ff7cF5dbB88f295319 \
+  "getStudent(uint256)(uint256,string,address,uint8,uint8,bool)" 2 \
+  --rpc-url http://127.0.0.1:8545
+Error: could not decode output; did you specify the wrong function return data type?
+
+Context:
+- ABI decoding failed: buffer overrun while deserializing
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+ cast send 0x4A679253410272dd5232B3Ff7cF5dbB88f295319 \
+  "addCredits(uint256,uint8)" 1 6 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0x65677bafb54dc5f04582b4f717f57ee7c43b617e3b33c01652f425ebc217dc28
+blockNumber          29
+contractAddress
+cumulativeGasUsed    27576
+effectiveGasPrice    24770622
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              27576
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0x21293bd12bf2246afc82225430e624b5ad0e4e6568ea9fa63c5a205e791309ef
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0x4A679253410272dd5232B3Ff7cF5dbB88f295319
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+ cast call 0x4A679253410272dd5232B3Ff7cF5dbB88f295319 \
+  "getStudent(uint256)(uint256,string,address,uint8,uint8,bool)" 1 \
+  --rpc-url http://127.0.0.1:8545
+Error: could not decode output; did you specify the wrong function return data type?
+
+Context:
+- ABI decoding failed: buffer overrun while deserializing
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_103$
+
+
+
+
+
+
+
+
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base$ forge init solidity_104
+Initializing /mnt/c/Base/solidity_104...
+Installing forge-std in /mnt/c/Base/solidity_104/lib/forge-std (url: https://github.com/foundry-rs/forge-std, tag: None)
+Cloning into '/mnt/c/Base/solidity_104/lib/forge-std'...
+remote: Enumerating objects: 2813, done.
+remote: Counting objects: 100% (189/189), done.       
+remote: Compressing objects: 100% (92/92), done.      
+Receiving objects:  97% (2729/2813), 996.00 KiB | 1.83Receiving objects:  98% (2757/2813), 996.00 KiB | 1.83Receiving objects:  99% (2785/2813), 996.00 KiB | 1.83remote: Total 2813 (delta 149), reused 99 (delta 97), pack-reused 2624 (from 2)
+Receiving objects: 100% (2813/2813), 996.00 KiB | 1.83Receiving objects: 100% (2813/2813), 1.02 MiB | 1.85 MiB/s, done.
+Resolving deltas: 100% (1882/1882), done.
+    Installed forge-std tag=v1.14.0@1801b0541f4fda118a10798fd3486bb7051c5dd6
+    Initialized forge project
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base$
+
+
+
+
+LearnRequire.sol
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_104$
+ forge build
+[⠆] Compiling...
+[⠰] Compiling 24 files with Solc 0.8.33
+[⠘] Solc 0.8.33 finished in 1.04s
+Compiler run successful!
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_104$
+ anvil
+Error: Address already in use (os error 98)
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_104$
+ forge create \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --broadcast \
+  src/LearnRequire.sol:LearnRequire
+[⠔] Compiling...
+No files changed, compilation skipped
+Deployer: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+Deployed to: 0x67d269191c92Caf3cD7723F116c85e6E9bf55933
+Transaction hash: 0x966a56ce92abcf47cd9f47667b3fe8177f4859ed5caf0e6a06253701f65e32ac
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_104$
+ cast send 0x67d269191c92Caf3cD7723F116c85e6E9bf55933 \
+  "registerStudent(uint256)" 2101001 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0x89812e3805202432234e356eb8a51a0d36ecce05c928493b5c4b1a27ead64477
+blockNumber          31
+contractAddress
+cumulativeGasUsed    46180
+effectiveGasPrice    19031299
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              46180
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0x52e041819d4af51402d67db58d5d5282eb6a0f191a29b251e0b5bffadfba1c47
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0x67d269191c92Caf3cD7723F116c85e6E9bf55933
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_104$
+ cast call 0x67d269191c92Caf3cD7723F116c85e6E9bf55933 \
+  "studentOwner(uint256)(address)" 2101001 \
+  --rpc-url http://127.0.0.1:8545
+0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_104$
+ cast send 0x67d269191c92Caf3cD7723F116c85e6E9bf55933 \
+  "addCredits(uint256,uint256)" 2101001 3 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0xfc173bf3f69594cb65004bebaef0b9bd120665cb85107cf75ce597df402790e6
+blockNumber          32
+contractAddress
+cumulativeGasUsed    46570
+effectiveGasPrice    16659711
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              46570
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0xb158771b036115b40e536df11fb30860e233e53d725466326043e955122a1523
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0x67d269191c92Caf3cD7723F116c85e6E9bf55933
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_104$
+ cast call 0x67d269191c92Caf3cD7723F116c85e6E9bf55933 \
+  "studentCredits(uint256)(uint256)" 2101001 \        
+  --rpc-url http://127.0.0.1:8545
+3
+
+
+
+
+
+
+LearnModifier.sol
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_104$ forge build
+[⠒] Compiling...
+[⠘] Compiling 1 files with Solc 0.8.33
+[⠃] Solc 0.8.33 finished in 103.76ms
+Compiler run successful!
+note[unwrapped-modifier-logic]: wrap modifier logic to reduce code size
+  --> src/LearnModifier.sol:15:5
+   |
+15 | /     modifier onlyAdmin() {
+16 | |         require(msg.sender == admin, "Hanya admin!");
+17 | |         _;
+18 | |     }
+   | |_____^
+   |
+help: wrap modifier logic to reduce code size
+   |
+15 ~     modifier onlyAdmin() {
+16 +         _onlyAdmin();
+17 +         _;
+18 +     }
+19 +
+20 +     function _onlyAdmin() internal {
+21 +         require(msg.sender == admin, "Hanya admin!");
+22 +     }
+   |
+   = help: https://book.getfoundry.sh/reference/forge/forge-lint#unwrapped-modifier-logic
+
+note[unwrapped-modifier-logic]: wrap modifier logic to reduce code size
+  --> src/LearnModifier.sol:21:5
+   |
+21 | /     modifier onlyStudentOwner(uint256 _id) {   
+22 | |         require(studentOwner[_id] == msg.sender, "Bukan student Anda!");
+23 | |         _;
+24 | |     }
+   | |_____^
+   |
+help: wrap modifier logic to reduce code size
+   |
+21 ~     modifier onlyStudentOwner(uint256 _id) {     
+22 +         _onlyStudentOwner(_id);
+23 +         _;
+24 +     }
+25 +
+26 +     function _onlyStudentOwner(uint256 _id) internal {
+27 +         require(studentOwner[_id] == msg.sender, "Bukan student Anda!");
+28 +     }
+   |
+   = help: https://book.getfoundry.sh/reference/forge/forge-lint#unwrapped-modifier-logic
+
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_104$
+ forge create \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --broadcast \
+  src/LearnModifier.sol:LearnModifier
+[⠰] Compiling...
+No files changed, compilation skipped
+Deployer: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+Deployed to: 0x84eA74d481Ee0A5332c457a4d796187F6Ba67fEB
+Transaction hash: 0xfffc79deb1a5b97e2b225ee16a2fb7aecdbfdef1726417601e1f09520dc50498
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_104$
+ cast call 0x84eA74d481Ee0A5332c457a4d796187F6Ba67fEB \
+  "admin()(address)" \
+  --rpc-url http://127.0.0.1:8545
+0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_104$
+ cast call 0x84eA74d481Ee0A5332c457a4d796187F6Ba67fEB \
+  "adminActionCount()(uint256)" \
+  --rpc-url http://127.0.0.1:8545
+0
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_104$
+ cast call 0x84eA74d481Ee0A5332c457a4d796187F6Ba67fEB \
+  "adminActionCount()(uint256)" \
+  --rpc-url http://127.0.0.1:8545
+0
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_104$
+ cast send 0x84eA74d481Ee0A5332c457a4d796187F6Ba67fEB \
+  "adminFunction()" \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0x140106dc6806814e78fe76e00506bb3beb124e2bcf3a6abdc55cba4fe980333a
+blockNumber          34
+contractAddress
+cumulativeGasUsed    45651
+effectiveGasPrice    12818082
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              45651
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0xac260f7501cfa496d7befe258e858ad3e5cb7aaa2abe606c4b08c6c38a861c02
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0x84eA74d481Ee0A5332c457a4d796187F6Ba67fEB
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_104$
+ cast call 0x84eA74d481Ee0A5332c457a4d796187F6Ba67fEB \
+  "adminFunction()" \
+  --from 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 \ 
+  --rpc-url http://127.0.0.1:8545
+Error: server returned an error response: error code 3: execution reverted: Hanya admin!, data: "0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000c48616e79612061646d696e210000000000000000000000000000000000000000"
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_104$
+ cast send 0x84eA74d481Ee0A5332c457a4d796187F6Ba67fEB \
+  "registerStudent(uint256)" 2101001 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0xf62902b0c20ce2a671be672f0f358bbdec7d078204fdbce87c5ba8c5d2799fea
+blockNumber          35
+contractAddress
+cumulativeGasUsed    46159
+effectiveGasPrice    11220699
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              46159
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0x24fbdd30cfbacf20197bed6b4a5a12cccb2b31bc56809ca71a811e4775af1fd4
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0x84eA74d481Ee0A5332c457a4d796187F6Ba67fEB
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_104$
+ cast call 0x84eA74d481Ee0A5332c457a4d796187F6Ba67fEB \
+  "studentOwner(uint256)(address)" 2101001 \
+  --rpc-url http://127.0.0.1:8545
+0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_104$
+
+
+
+
+LearnEvents.sol
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_104$ forge build
+[⠒] Compiling...
+[⠘] Compiling 1 files with Solc 0.8.33
+[⠃] Solc 0.8.33 finished in 98.34ms
+Compiler run successful!
+note[unwrapped-modifier-logic]: wrap modifier logic to reduce code size
+  --> src/LearnModifier.sol:15:5
+   |
+15 | /     modifier onlyAdmin() {
+16 | |         require(msg.sender == admin, "Hanya admin!");
+17 | |         _;
+18 | |     }
+   | |_____^
+   |
+help: wrap modifier logic to reduce code size
+   |
+15 ~     modifier onlyAdmin() {
+16 +         _onlyAdmin();
+17 +         _;
+18 +     }
+19 +
+20 +     function _onlyAdmin() internal {
+21 +         require(msg.sender == admin, "Hanya admin!");
+22 +     }
+   |
+   = help: https://book.getfoundry.sh/reference/forge/forge-lint#unwrapped-modifier-logic
+
+note[unwrapped-modifier-logic]: wrap modifier logic to reduce code size
+  --> src/LearnModifier.sol:21:5
+   |
+21 | /     modifier onlyStudentOwner(uint256 _id) {   
+22 | |         require(studentOwner[_id] == msg.sender, "Bukan student Anda!");
+23 | |         _;
+24 | |     }
+   | |_____^
+   |
+help: wrap modifier logic to reduce code size
+   |
+21 ~     modifier onlyStudentOwner(uint256 _id) {     
+22 +         _onlyStudentOwner(_id);
+23 +         _;
+24 +     }
+25 +
+26 +     function _onlyStudentOwner(uint256 _id) internal {
+27 +         require(studentOwner[_id] == msg.sender, "Bukan student Anda!");
+28 +     }
+   |
+   = help: https://book.getfoundry.sh/reference/forge/forge-lint#unwrapped-modifier-logic
+
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_104$
+ forge create \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --broadcast \
+  src/LearnEvents.sol:LearnEvents 
+[⠆] Compiling...
+No files changed, compilation skipped
+Deployer: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+Deployed to: 0x1613beB3B2C4f22Ee086B2b38C1476A3cE7f78E8
+Transaction hash: 0x079aefb59dee16948ee1179673995bdfb1a2bf6c4031b87ce3ac0de13792e9b2
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_104$
+ cast send 0x1613beB3B2C4f22Ee086B2b38C1476A3cE7f78E8 \
+  "registerStudent(string)" "Budi" \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0x6676aead0d71f8c40794d2b044716ed58d82da985552010bcad91d4cfeb53857
+blockNumber          37
+contractAddress
+cumulativeGasUsed    95152
+effectiveGasPrice    8654773
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              95152
+logs                 [{"address":"0x1613beb3b2c4f22ee086b2b38c1476a3ce7f78e8","topics":["0x7795cd2116fe8db671579fb005767dc5792883e5d10ef1680d6dd9b909aff280","0x000000000000000000000000f39fd6e51aad88f6f4ce6ab8827279cfffb92266","0x0000000000000000000000000000000000000000000000000000000000000001"],"data":"0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000044275646900000000000000000000000000000000000000000000000000000000","blockHash":"0x6676aead0d71f8c40794d2b044716ed58d82da985552010bcad91d4cfeb53857","blockNumber":"0x25","blockTimestamp":"0x6989bb30","transactionHash":"0xc3421fbc884e0f1150974b422c4566a4e2718c0873ebaf4d7784c88efca7195c","transactionIndex":"0x0","logIndex":"0x0","removed":false}]
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000040000000000000000000008000000000000000000010100002000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000002000000000000000000040000000000000000000000000000000000000000000000000000000000000001000     
+root
+status               1 (success)
+transactionHash      0xc3421fbc884e0f1150974b422c4566a4e2718c0873ebaf4d7784c88efca7195c
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0x1613beB3B2C4f22Ee086B2b38C1476A3cE7f78E8
+
+
+
+
+
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base$ forge init solidity_105
+Initializing /mnt/c/Base/solidity_105...
+Installing forge-std in /mnt/c/Base/solidity_105/lib/forge-std (url: https://github.com/foundry-rs/forge-std, tag: None)
+Cloning into '/mnt/c/Base/solidity_105/lib/forge-std'...
+remote: Enumerating objects: 2818, done.
+remote: Counting objects: 100% (194/194), done.       
+remote: Compressing objects: 100% (95/95), done.      
+remote: Total 2818 (delta 151), reused 101 (delta 99), pack-reused 2624 (from 2)
+Receiving objects: 100% (2818/2818), 1.02 MiB | 2.31 MiB/s, done.
+Resolving deltas: 100% (1883/1883), done.
+    Installed forge-std tag=v1.14.0@1801b0541f4fda118a10798fd3486bb7051c5dd6
+    Initialized forge project
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base$ 
+
+
+
+
+LearnPayable.sol
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_105$
+ forge build
+[⠆] Compiling...
+[⠰] Compiling 24 files with Solc 0.8.33
+[⠃] Solc 0.8.33 finished in 1.08s
+Compiler run successful!
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_105$
+ forge create \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --broadcast \
+  src/LearnPayable.sol:LearnPayable
+[⠆] Compiling...
+No files changed, compilation skipped
+Deployer: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+Deployed to: 0x998abeb3E57409262aE5b751f60747921B33613E
+Transaction hash: 0x56407332650bb765b9c57a52f4906f925ae1ab8facfce33a4e9707cdb1f6940b
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_105$
+ cast send 0x998abeb3E57409262aE5b751f60747921B33613E \
+  "registerStudent()(uint256)" \
+  --value 1000000000000000 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0xeb7a0c6a8d1b056fbf16368dc2fe873ac0981d2b1ec0206968a9e63a0b09d74a
+blockNumber          41
+contractAddress
+cumulativeGasUsed    66111
+effectiveGasPrice    5094756
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              66111
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0x932cb7a5c80baacd9dc3caff34a615b16aa05c9620b8b1c2a9ea7ade9d91ad32
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0x998abeb3E57409262aE5b751f60747921B33613E
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_105$
+ cast send 0x998abeb3E57409262aE5b751f60747921B33613E \
+  "registerStudent()(uint256)" \
+  --value 1000000000000000 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0x104bc8d24e6bf1d86e1fc9700beb8a1a29a510119c39900047a33a2d023ee995
+blockNumber          42
+contractAddress
+cumulativeGasUsed    49011
+effectiveGasPrice    4460719
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              49011
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0x0bb6db787372dd9f460684f5427a9d093891e79271bbadd052017febb214c3f8
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0x998abeb3E57409262aE5b751f60747921B33613E
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_105$
+ cast call 0x998abeb3E57409262aE5b751f60747921B33613E \
+  "getBalance()(uint256)" \
+  --rpc-url http://127.0.0.1:8545
+2000000000000000 [2e15]
+
+
+
+
+
+
+LearnSendETH.sol
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_105$ forge build
+[⠆] Compiling...
+[⠰] Compiling 1 files with Solc 0.8.33
+[⠒] Solc 0.8.33 finished in 89.38ms
+Compiler run successful!
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_105$ forge create \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --broadcast \
+  src/LearnSendETH.sol:LearnSendETH
+[⠆] Compiling...
+No files changed, compilation skipped
+Deployer: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+Deployed to: 0x99bbA657f2BbC93c02D617f8bA121cB8Fc104Acf
+Transaction hash: 0xf9e5978717949a1160baf041e6ffbb9376401d6f77c1cf40274973acc833e680
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_105$
+ cast send 0x99bbA657f2BbC93c02D617f8bA121cB8Fc104Acf \
+  "deposit()" \
+  --value 10000000000000000 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0xb934497d59a27e13e66ac15e970078589343c67f3febdcd993a9e98a371604dc
+blockNumber          44
+contractAddress
+cumulativeGasUsed    21227
+effectiveGasPrice    3431041
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              21227
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0x41fd3faecd1febae03730f16481f1c0b816b3b8fab775f47b92cd87fe3fe5dfb
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0x99bbA657f2BbC93c02D617f8bA121cB8Fc104Acf
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_105$
+ cast send 0x99bbA657f2BbC93c02D617f8bA121cB8Fc104Acf \
+  "deposit()" \
+  --value 10000000000000000 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0xb9fceef102ebae6024af90bb6a294ad8d64e6179dbd6cb906e0e70c7d2e55ee7
+blockNumber          45
+contractAddress
+cumulativeGasUsed    21227
+effectiveGasPrice    3002768
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              21227
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0xc73496ecaa13861d16e53578585cc154981abb2833d714c1dde22c9b35c616e5
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0x99bbA657f2BbC93c02D617f8bA121cB8Fc104Acf
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_105$
+ cast send 0x99bbA657f2BbC93c02D617f8bA121cB8Fc104Acf \
+  "sendScholarship(address,uint256)" 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 1000000000000000 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0x616f7c19970a061449579a1269ee92b729dcd7b7bf635dadc3036947e86d034f
+blockNumber          46
+contractAddress
+cumulativeGasUsed    56450
+effectiveGasPrice    2627954
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              56450
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0x907a248579857ac4ddce147fe1fd6f45421ea09fa64a3190fe7381c2732c7787
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0x99bbA657f2BbC93c02D617f8bA121cB8Fc104Acf
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_105$
+ cast call 0x99bbA657f2BbC93c02D617f8bA121cB8Fc104Acf \
+  "scholarships(address)(uint256)" 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 \
+  --rpc-url http://127.0.0.1:8545
+1000000000000000 [1e15]
+
+
+
+
+LearnTime.sol
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_105$ forge build
+[⠑] Compiling...
+[⠃] Compiling 1 files with Solc 0.8.33
+[⠊] Solc 0.8.33 finished in 76.64ms
+Compiler run successful!
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_105$ forge create \
+  --rpc-url http://127.0.0.1:8545 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --broadcast \
+  src/LearnTime.sol:LearnTime   
+[⠆] Compiling...
+No files changed, compilation skipped
+Deployer: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+Deployed to: 0x5eb3Bc0a489C5A8288765d2336659EbCA68FCd00
+Transaction hash: 0x5128fd77b66c3ed71b52465c5f14cc19d4b1fe93d1622e87813b2ac20e8fe14e
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_105$
+ cast send 0x5eb3Bc0a489C5A8288765d2336659EbCA68FCd00 \
+  "registerStudent(uint256)" 2101001 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0x6f042d7597fac2af829b4cb9836c8150a44328b82c4f7aa33f2e6e808120c464
+blockNumber          48
+contractAddress
+cumulativeGasUsed    43862
+effectiveGasPrice    2019853
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              43862
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0xbf72c1ec5798c1803e97b0bfc8cec171430708b46bf41c60577bfe7f6404fb4b
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0x5eb3Bc0a489C5A8288765d2336659EbCA68FCd00
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_105$
+ cast call 0x5eb3Bc0a489C5A8288765d2336659EbCA68FCd00 \
+  "getStudentAge(uint256)(uint256)" 2101001 \
+  --rpc-url http://127.0.0.1:8545
+0
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_105$
+ cast send 0x5eb3Bc0a489C5A8288765d2336659EbCA68FCd00 \
+  "submitAssignment(uint256)" 2101001 \
+  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+  --rpc-url http://127.0.0.1:8545
+
+blockHash            0x455dce39d5daa408766a222ff413762d3710e6554db3e74bbe9e2980936187db
+blockNumber          49
+contractAddress
+cumulativeGasUsed    44148
+effectiveGasPrice    1768110
+from                 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+gasUsed              44148
+logs                 []
+logsBloom            0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000     
+root
+status               1 (success)
+transactionHash      0xe863afda55a27e1a2e51da0232f2617ba5c14ac71a5a5c61b7d69dd8e986428f
+transactionIndex     0
+type                 2
+blobGasPrice         1
+blobGasUsed
+to                   0x5eb3Bc0a489C5A8288765d2336659EbCA68FCd00
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_105$
+ cast call 0x5eb3Bc0a489C5A8288765d2336659EbCA68FCd00 \
+  "submitAssignment(uint256)" 2101001 \
+  --from 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 \ 
+  --rpc-url http://127.0.0.1:8545
+Error: server returned an error response: error code 3: execution reverted: Harus tunggu 1 hari, data: "0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001348617275732074756e6767752031206861726900000000000000000000000000"
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_105$
+ cast call 0x5eb3Bc0a489C5A8288765d2336659EbCA68FCd00 \
+  "timeUntilNextSubmission(uint256)(uint256)" 2101001 \
+  --rpc-url http://127.0.0.1:8545
+86400 [8.64e4]
+ezranahumury@DESKTOP-8003BIM:/mnt/c/Base/solidity_105$
+
+
+
+
